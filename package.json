@@ -1,0 +1,29 @@
+{
+  "name": "americanhorseproject",
+  "version": "1.0.0",
+  "description": "A platfrom to list horses for adoption and to fins horses to adopt",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuanxizhang/AmericanHorseProject.git"
+  },
+  "keywords": [
+    "horse",
+    "adoption",
+    "site"
+  ],
+  "author": "Make it MVP",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuanxizhang/AmericanHorseProject/issues"
+  },
+  "homepage": "https://github.com/yuanxizhang/AmericanHorseProject#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.5"
+  }
+}
