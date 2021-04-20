@@ -1,26 +1,27 @@
 {
-  "name": "americanhorseproject",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.4",
+    "nodemon": "^2.0.7"
+  },
+  "name": "AmericanHorseProject",
+  "description": "",
   "version": "1.0.0",
-  "description": "A platfrom to list horses for adoption and to fins horses to adopt",
   "main": "index.js",
+  "devDependencies": {},
   "scripts": {
-    "test": "npm test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yuanxizhang/AmericanHorseProject.git"
+    "url": "git+https://github.com/MVP-Marketplace/AmericanHorseProject.git"
   },
-  "keywords": [
-    "horse",
-    "adoption",
-    "site"
-  ],
-  "author": "Make it MVP",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yuanxizhang/AmericanHorseProject/issues"
+    "url": "https://github.com/MVP-Marketplace/AmericanHorseProject/issues"
   },
-  "homepage": "https://github.com/yuanxizhang/AmericanHorseProject#readme",
-  "dependencies": {},
-  "devDependencies": {}
+  "homepage": "https://github.com/MVP-Marketplace/AmericanHorseProject#readme"
 }
