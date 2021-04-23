@@ -1,4 +1,4 @@
-const mongoose = require('../db/connection');
+const mongoose = require('../connection');
 
 const rescuerSchema = new mongoose.Schema({
     name: String,
