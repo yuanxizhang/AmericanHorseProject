@@ -18,7 +18,7 @@ This project was built with the MERN stack:
 * bundler 2.2.8
 
 ## Installation
-* Install dependencies: run bundle install
+* Install dependencies: run npm install
 * Database setup: ...
 
 # Launch app
