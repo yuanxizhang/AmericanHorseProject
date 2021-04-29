@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+// This should house your browserRouter 
 function App() {
   return (
     <div className="App">
