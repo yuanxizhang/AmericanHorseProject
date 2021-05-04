@@ -1,4 +1,5 @@
-const mongoose = require('../connection');
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const rescuerSchema = new mongoose.Schema({
     name: String,
@@ -7,8 +8,8 @@ const rescuerSchema = new mongoose.Schema({
     email: String,
     companyName: String,
     verifiedSocial: Number,
-    horsesRescuing: [String],
+    horses : [{ type: Schema.Types.ObjectId, ref: 'Horse' }]
 });
 
 const Rescuer = mongoose.model('Rescuer', rescuerSchema);
-module.exports = Rescuer;
+export default Rescuer;

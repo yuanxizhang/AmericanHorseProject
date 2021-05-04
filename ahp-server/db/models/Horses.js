@@ -1,4 +1,4 @@
-const mongoose = require('../db/connection');
+const mongoose = require("mongoose");
 
 const horseSchema = new mongoose.Schema({
     name: String,
@@ -10,8 +10,10 @@ const horseSchema = new mongoose.Schema({
     gender: String,
     height: String,
     description: String,
-    isAdopted: Boolean,
-});
+    isAdopted: {type: Boolean, default: false, required: true },
+    rescuer : { type: Schema.Types.ObjectId, ref: 'Rescuer' },
+    adoptionRequests : [{ type: Schema.Types.ObjectId, ref: 'AdoptionRequest' }]
+}, { timestamps: true });
 
 const Horse = mongoose.model('Horse', horseSchema);
-module.exports = Horse;
+export default Horse;
