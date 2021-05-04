@@ -9,7 +9,7 @@ const rescuerSchema = new mongoose.Schema({
     companyName: String,
     verifiedSocial: Number,
     horses : [{ type: Schema.Types.ObjectId, ref: 'Horse' }]
-});
+}, { timestamps: true });
 
 const Rescuer = mongoose.model('Rescuer', rescuerSchema);
-export default Rescuer;
+module.exports = Rescuer;

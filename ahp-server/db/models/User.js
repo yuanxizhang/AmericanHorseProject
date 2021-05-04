@@ -40,6 +40,12 @@ const userSchema = new mongoose.Schema (
             required: true,
             default: false
         },
+        
+        birthDate: String,
+        occupation: String,
+        address: String,
+        phone: String,
+        linkedinProfile: String,
         tokens: [
             {
                 token: {

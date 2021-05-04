@@ -12,7 +12,7 @@ const adopterSchema = new mongoose.Schema({
 });
 
 const Adopter = mongoose.model('Adopter', adopterSchema);
-export default Adopter;
+module.exports = Adopter;
 
 /* 
 orders: [

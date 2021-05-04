@@ -26,4 +26,4 @@ adoptionSchema.methods.toJSON = function () {
   };
 };
 
-export default mongoose.model('AdoptionRequest', adoptionSchema);
+module.exports = mongoose.model('AdoptionRequest', adoptionSchema);

@@ -2,7 +2,12 @@ import AdoptionRequest from '../models/AdoptionRequest';
 import cuid from 'cuid';
 
 export function getAllRequests(req, res) {
-  AdoptionRequest.find().sort('-dateOfRequest').exec((err, adoptionRequests) => {
+  AdoptionRequest
+  .find()
+  .sort({ "dateOfRequest": -1 })
+  .populate('user')
+  .populate('horse')
+  .exec((err, adoptionRequests) => {
     if (err) {
       res.status(500).send(err);
     }
@@ -36,7 +41,10 @@ export function getOneRequest(req, res) {
 
   const id = req.params.id;
 
-  AdoptionRequest.findById(id)
+  AdoptionRequest
+  .findById(id)
+  .populate('user')
+  .populate('horse')
   .then(data => {
     if (!data)
       res.status(404).send({ message: "Not able to find adoption request with id " + id });
