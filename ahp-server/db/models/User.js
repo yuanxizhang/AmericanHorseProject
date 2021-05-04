@@ -48,6 +48,7 @@ const userSchema = new mongoose.Schema (
                 }
             }
         ], 
+        adoptionRequests : [{ type: Schema.Types.ObjectId, ref: 'AdoptionRequest' }]
     },
     {
         timestamps: true

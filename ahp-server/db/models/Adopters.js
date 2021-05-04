@@ -1,4 +1,4 @@
-const mongoose = require('../db/connection');
+const mongoose = require("mongoose");
 
 const adopterSchema = new mongoose.Schema({
     name: String,
@@ -8,11 +8,11 @@ const adopterSchema = new mongoose.Schema({
     phone: String,
     email: String,
     verifiedSocial: Number,
-    horsesAdopting: [String],    
+    adoptionRequests : [{ type: Schema.Types.ObjectId, ref: 'AdoptionRequest' }]   
 });
 
 const Adopter = mongoose.model('Adopter', adopterSchema);
-module.exports = Adopter;
+export default Adopter;
 
 /* 
 orders: [
