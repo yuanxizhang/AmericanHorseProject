@@ -17,13 +17,23 @@ Desktop.ini
 
 # npm
 node_modules
-npm-debug.log
+npm-debug.log*
 package-lock.json
 *.log
 *.gz
 
-# Coveralls
-coverage
+# yarn
+yarn-debug.log*
+yarn-error.log*
+
+# testing
+/coverage
+
+# production
+/build
 
 # Benchmarking
 benchmarks/graphs
+
+# visual studios configurations
+.vs
