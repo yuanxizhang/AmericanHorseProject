@@ -4,7 +4,7 @@ const router = require('express').Router(),
     loginUser,
     requestPasswordReset,
     passwordRedirect
-  } = require('../../controllers/users');
+  } = require('../../controllers/users.js');
 
 router.post('/', createUser);
 router.post('/login', loginUser);

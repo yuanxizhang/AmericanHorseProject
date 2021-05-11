@@ -1,4 +1,5 @@
-import app from "./app";
+const app = require('./app');
+const express = require('express');
 const cors = require('cors');
 const PORT = 5000;
 
@@ -7,8 +8,11 @@ app.use(cors());
 /**
  * Start Express server.
  */
-const server = app.listen(PORT, function() {
-    console.log("Express server is running on Port: " + PORT);
+
+app.use('/', (req, res) => {
+res.send('Hello world')
 });
 
-export default server;
+app.listen(PORT, function() {
+    console.log("Express server is running on Port: " + PORT);
+});
