@@ -45,7 +45,7 @@ const userSchema = new mongoose.Schema (
         occupation: String,
         address: String,
         phone: String,
-        linkedinProfile: String,
+        socialMediaProfile: String,
         tokens: [
             {
                 token: {
