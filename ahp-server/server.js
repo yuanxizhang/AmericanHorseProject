@@ -9,9 +9,6 @@ app.use(cors());
  * Start Express server.
  */
 
-app.use('/', (req, res) => {
-res.send('Hello world')
-});
 
 app.listen(PORT, function() {
     console.log("Express server is running on Port: " + PORT);

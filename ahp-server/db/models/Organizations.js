@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const rescuerSchema = new mongoose.Schema({
+const organizationSchema = new mongoose.Schema({
     name: String,
     birthDate: String,
     address: String,
@@ -11,5 +11,5 @@ const rescuerSchema = new mongoose.Schema({
     horses : [{ type: Schema.Types.ObjectId, ref: 'Horse' }]
 });
 
-const Rescuer = mongoose.model('Rescuer', rescuerSchema);
-export default Rescuer;
+const Organization = mongoose.model('Organization', organizationSchema);
+export default Organization;
