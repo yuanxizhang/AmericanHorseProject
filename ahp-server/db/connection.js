@@ -4,10 +4,11 @@ mongoose.Promise = Promise;
 
 const mongoURI = process.env.NODE_ENV === 'production' ? process.env.DB_URL : '';
 
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-.then((instance) => 
-    console.log(`Connected to db: ${instance.connection[0].name}`)
-)
-.catch((error) => console.log('Connection failed!', error));
+mongoose.connect(process.env.DB,{ 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true, 
+    useFindAndModify: false})
+    .then(() => console.log("MongoDB Database Connected Successfully"))
+    .catch(err => console.log(err));
 
 module.exports = mongoose;
