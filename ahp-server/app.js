@@ -10,6 +10,8 @@ path = require('path');
 
 app.use(express.json()); 
 
+app.use('/api', openRoutes)
+
 if (process.env.NODE_ENV === 'production') {
     // Handle React routing, return all requests to React app
     app.get('*', (request, response) => {
