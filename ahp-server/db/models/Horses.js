@@ -11,7 +11,7 @@ const horseSchema = new mongoose.Schema({
     capabilities: String, 
     Urgency: String,
     isAdopted: {type: Boolean, default: false, required: true },
-    rescuer : { type: Schema.Types.ObjectId, ref: 'Rescuer' },
+    Organization : { type: Schema.Types.ObjectId, ref: 'Organization' },
     adoptionRequests : [{ type: Schema.Types.ObjectId, ref: 'AdoptionRequest' }]
 }, { timestamps: true });
 
