@@ -8,10 +8,28 @@ const Schema = mongoose.Schema;
 
 const userSchema = new mongoose.Schema (
     {
-        name: {
+        firstName: {
             type: String,
             required: true,
             trim: true
+        },
+        lastName: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        organizationName: { 
+            type: String,
+            trim: true
+        },
+        ein: { 
+            type: Integer,
+            trim: true,
+            validate(value){
+                if (!validator.isValid(value)){
+                    throw new Error('Employer Identification Number is invalid')
+                }
+            }
         },
         email: {
             type: String,
@@ -25,6 +43,17 @@ const userSchema = new mongoose.Schema (
                 }
             }
         },
+        userName: { 
+            type: String, 
+            trim: true,
+            unique: true,
+            required: true,
+            validate(value) {
+                if(value.length < 7) {
+                    throw new Error('username must be at least 7 characters')
+                }
+            }
+        },
         password: {
             type: String,
             required: true,
@@ -35,6 +64,52 @@ const userSchema = new mongoose.Schema (
                 }
                 if(value.length < 10) {
                     throw new Error('password must be at least 10 characters')
+                }
+            }
+        },
+        address: {
+            type: String,
+            trim: true,
+            
+        },
+        address2: { 
+            type: String,
+            trim: true
+        },
+        city: { 
+            type: String,
+            trim: true
+        },
+        state: { 
+            type: String,
+            trim: true
+        },
+        zip: { 
+            type: Integer,
+            validate(value) {
+                if(value.length !== 5) {
+                    throw new Error('invalid U.S. zip code')
+                }
+            }
+        },
+        phoneNumber: {
+            type: String,
+            validate(value) {
+                var phonenumber = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                if(!value.match(phonenumber)) {
+                    throw new Error('invalid phone number')
+                }
+            }
+        },
+        bio: {
+            type: String,
+        },
+        orgWebsite: {
+            type: String,
+            validate(value){
+                var url = /^(https?|ftp):\/\/([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(:[0-9]+)*(\/($|[a-zA-Z0-9.,?'\\+&%$#=~_-]+))*$/;
+                if(!value.match(orgWebsite)){
+                    throw new Error('invalid url')
                 }
             }
         },
