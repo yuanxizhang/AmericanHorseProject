@@ -1,5 +1,5 @@
 const mongoose = require('mongoose'); 
-const mongoDB_URL = require('../../process.env').MONGODB_URL;
+const mongoDB_URL = process.env.MONGODB_URL;
 
 
 try {

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Organization = require("../db/models/Organization");
+// const Organization = require("../db/models/Organization");
 router.get("/", (req, res) => {
   Organization.find({}).then((organization) => {
     res.json(organization);
