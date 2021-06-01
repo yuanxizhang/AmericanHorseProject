@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import * as AdoptionRequestController from '../controllers/adoptionRequest.controller';
+import * as AdoptionRequestController from '../../controllers/adoptionRequest.controller';
 const adoptionRouter = new Router();
 
 // Get all adoption requests
