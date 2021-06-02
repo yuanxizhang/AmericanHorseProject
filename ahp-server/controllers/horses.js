@@ -3,26 +3,26 @@ const router = express.Router();
 
 const Horse = require('../db/models/Horses');
 
-router.get('/', (req, res) => {
+router.get('/horses', (req, res) => {
 	Horse.find({}).then((horse) => {
 		res.json(horse);
 	});
 });
 
-router.get('/:id', (req, res) => {
+router.get('horses/:id', (req, res) => {
 	let parameter = req.params.id;
 	Horse.findById(parameter).then((horse) => {
 		res.json(horse);
 	});
 });
 
-router.post('/', (req, res) => {
+router.post('/horses', (req, res) => {
 	Horse.create(req.body).then((horse) => {
 		res.json(horse);
 	});
 });
 
-router.put('/:id', (req, res) => {
+router.put('horses/:id', (req, res) => {
 	let updatedHorse = req.body;
 	Horse.findOneAndUpdate({ _id: req.params.id }, updatedHorse, {
 		new: true,
@@ -33,7 +33,7 @@ router.put('/:id', (req, res) => {
 	});
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('horses/:id', (req, res) => {
 	Horse.findByIdAndDelete({ _id: req.params.id }).then(() => {
 		Horse.find({}).then((horse) => {
 			res.json(horse);
