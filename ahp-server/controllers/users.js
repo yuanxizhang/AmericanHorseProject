@@ -35,7 +35,7 @@ exports.createUser = async (req, res) => {
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const user = await User.findByCredentials(email, password);
+    const user = await Users.findByCredentials(email, password);
     const token = await user.generateAuthToken();
     res.cookie('jwt', token, {
       httpOnly: true,
