@@ -4,6 +4,7 @@ app = express(),
 openRoutes = require('./routes/open/index'),
 userRouter = require('./routes/secure/user'),
 secureOrganization = require('./routes/secure/organization.route'),
+secureHorses = require('./routes/secure/horse.route.js'),
 passport = require('./middleware/authentication/index.js'),
 cookieParser = require('cookie-parser'),
 fileUpload = require('express-fileupload'),
@@ -15,6 +16,7 @@ app.use('/api', openRoutes)
 
 app.use('/api/*', passport.authenticate('jwt', { session: false }));
 app.use('/api', secureOrganization)
+app.use('/api/horses/', secureHorses)
 
 if (process.env.NODE_ENV === 'production') {
     // Handle React routing, return all requests to React app

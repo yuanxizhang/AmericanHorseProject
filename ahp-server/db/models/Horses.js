@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const Schema = mongoose.Schema;
+
 const horseSchema = new mongoose.Schema({
     name: String,
     breed: String,
@@ -16,4 +18,4 @@ const horseSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const Horse = mongoose.model('Horse', horseSchema);
-export default Horse;
+module.exports = Horse;
