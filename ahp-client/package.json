@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
+    "concurrently": "^6.2.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.0",
     "react-dom": "^17.0.2",
@@ -17,10 +18,10 @@
   },
   "scripts": {
     "client-install": "npm install --prefix ahp-client",
-    "start": "node ahp-server.js",
-    "server": "nodemon ahp-server.js",
+    "start": "npm start",
+    "server": "nodemon ahp-server/server",
     "client": "npm start --prefix ahp-client",
-    "dev": "concurrently \"npm run ahp-server\" \"npm run ahp-client\""
+    "dev": "concurrently \"npm run server\" \"npm start\""
   },
   "eslintConfig": {
     "extends": [

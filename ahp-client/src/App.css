@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+/* Style the navigation bar */
+.navbar {
+    width: 100%;
+    background-color: #355e3b;
+    overflow: auto;
+}
+  
+  /* Navbar links */
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: #748CAB;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+  
+.active {
+    background-color: #355E3B;
+    color: black;
+}
+  
+/* Navbar links on mouse-over */
+.navbar a:hover {
+    background-color: #ffedd8;
+    color: #17223a;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 600px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+    body {
+      padding-top: 0px;
+    }
+}
+  
+ul.nav li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul.nav {
+    background-color: #355E3B;
+    padding: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  
+ul.nav li a {
+    color: #1D2D44;
+    text-decoration: none;
+    padding: 15px;
+    display: inline-block;
 }

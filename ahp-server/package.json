@@ -20,9 +20,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "seed": "node horseSeeds.js",
-    "start": "node server.js",
-    "server": "nodemon server.js"
+    "seed": "",
+    "start": "",
+    "server": ""
   },
   "repository": {
     "type": "git",

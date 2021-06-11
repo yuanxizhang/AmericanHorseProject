@@ -24,10 +24,15 @@ mongoose.connect(process.env.MONGODB_URL,{
     .catch(err => console.log(err));
 app.use(cors());
 
-app.get('/', (req, res) => {
+app.get('/ping', (req, res) => {
     res.json({message: 'American Horse Project RESTful API'});
-  });
+});
 
+app.use(express.static(path.join(__dirname, 'build')));
+// requests to any route would be served the index.html file in the production build
+app.get('/*', function(req,res) {
+          res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  }); 
 
 /**
  * Start Express server.
