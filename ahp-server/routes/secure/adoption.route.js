@@ -1,20 +1,26 @@
-import { Router } from 'express';
-import * as AdoptionRequestController from '../../controllers/adoptionRequest.controller';
-const adoptionRouter = new Router();
+const express = require('express');
+const router = express.Router();
+const {
+	getAllRequests,
+	createRequest,
+	getOneRequest,
+	updateRequest,
+	deleteRequest,
+} = require('../../controllers/adoptionRequest.controller');
 
 // Get all adoption requests
-adoptionRouter.route('/adoptionRequests').get(AdoptionRequestController.getAllRequests);
+router.get('/', getAllRequests);
 
 // Get one adoption request by cuid
-adoptionRouter.route('/adoptionRequests/:id').get(AdoptionRequestController.getOneRequest);
+router.get('/adoptionRequests/:id', getOneRequest);
 
 // Add a new adoption request
-adoptionRouter.route('/adoptionRequests').post(AdoptionRequestController.createRequest);
+router.post('/', createRequest);
 
 // Update an adoption request by cuid
-adoptionRouter.route('/adoptionRequests/:id').put(AdoptionRequestController.updateRequest);
+router.put('/adoptionRequests/:id', updateRequest);
 
 // Delete an adoption request by cuid
-adoptionRouter.route('/adoptionRequests/:id').delete(AdoptionRequestController.deleteRequest);
+router.delete('/', deleteRequest);
 
-export default adoptionRouter;
+module.exports = router;

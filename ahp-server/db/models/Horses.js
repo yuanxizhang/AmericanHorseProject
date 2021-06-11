@@ -11,9 +11,9 @@ const horseSchema = new mongoose.Schema({
     size: String,
     color: String,
     capabilities: String, 
-    Urgency: String,
+    urgency: String,
     isAdopted: {type: Boolean, default: false, required: true },
-    Organization : { type: Schema.Types.ObjectId, ref: 'Organization' },
+    organization : { type: Schema.Types.ObjectId, ref: 'Organization' },
     adoptionRequests : [{ type: Schema.Types.ObjectId, ref: 'AdoptionRequest' }]
 }, { timestamps: true });
 
