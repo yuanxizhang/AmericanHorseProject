@@ -17,6 +17,7 @@ app.use(cookieParser());
 app.use(fileUpload());
 
 app.use('/api/*', passport.authenticate('jwt', { session: false }));
+app.use('/api/user', userRouter);
 app.use('/api/organization', secureOrganization);
 app.use('/api/horses/', secureHorses);
 

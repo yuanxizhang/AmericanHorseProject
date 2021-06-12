@@ -18,7 +18,7 @@ router.post('/', createOrUpdateOrg);
 router.get('/', getAllOrganizations);
 
 // Get organization by user ID
-router.get('/user/:user-id', getOrgByID);
+router.get('/user/:id', getOrgByID);
 
 // Delete an organization
 router.delete('/', deleteOrg);

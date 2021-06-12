@@ -10,8 +10,8 @@ const { check, validationResult } = require('express-validator');
 exports.getCurrentOrg = async (req, res) => {
 	try {
 		const organization = await Organization.findOne({
-			user: req.user.id,
-		}).populate('user', ['name', 'email']);
+			owner: req.user.id,
+		}).populate('owner', ['name', 'email']);
 
 		if (!organization) {
 			res.status(400).json({ msg: 'This user does not own an organization' });
@@ -67,22 +67,27 @@ exports.createOrUpdateOrg =
 		if (zipCode) organizationFields.zipCode = zipCode;
 
 		try {
-			let organization = await Organization.findOne({ user: req.user.id });
-
+			let organization = await Organization.findOne({ owner: req.user.id });
+			console.log('organization: ', organization);
 			if (organization) {
 				// Update
+				console.log('inside org');
 				organization = await Organization.findOneAndUpdate(
-					{ user: req.user.id },
+					{ owner: req.user.id },
 					{ $set: organizationFields },
 					{ new: true }
 				);
-				return res.json(organization);
+				console.log(organization);
+				return res.status(201).json(organization);
+			} else {
+				organization = new Organization({
+					...organizationFields,
+					owner: req.user.id,
+				});
 			}
 			// Create
-			organization = new Organization(organizationFields);
-
 			await organization.save();
-			res.json(organization);
+			res.status(200).json(organization);
 		} catch (err) {
 			console.error(err);
 			res.status(500).send('Server Error');
@@ -94,7 +99,7 @@ exports.createOrUpdateOrg =
 // @access Public
 exports.getAllOrganizations = async (req, res) => {
 	try {
-		const organizations = await Organization.find().populate('user', [
+		const organizations = await Organization.find().populate('owner', [
 			'name',
 			'email',
 		]);
@@ -111,8 +116,8 @@ exports.getAllOrganizations = async (req, res) => {
 exports.getOrgByID = async (req, res) => {
 	try {
 		const organization = await Organization.findOne({
-			user: req.params.user_id,
-		}).populate('user', ['name', 'email']);
+			owner: req.params.id,
+		}).populate('owner', ['name', 'email']);
 
 		if (!organization)
 			return res
@@ -137,10 +142,9 @@ exports.getOrgByID = async (req, res) => {
 exports.deleteOrg = async (req, res) => {
 	try {
 		// Remove organization
-		await Organization.findOneAndRemove({ user: req.user.id });
+		await Organization.findOneAndRemove({ owner: req.user.id });
 
-		await User.findOneAndRemove({ _id: req.user.id });
-		res.json({ msg: 'User removed' });
+		res.json({ msg: 'Organization removed' });
 	} catch (err) {
 		console.error(err.message);
 		res.status(500).send('Server Error');
