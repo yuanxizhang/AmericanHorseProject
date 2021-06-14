@@ -5,26 +5,26 @@ const User = require('../db/models/Users');
 // Create a user
 // ***********************************************//
 exports.createUser = async (req, res) => {
-	// console.log(req.body)
-	const { name, email, password, admin } = req.body;
-	try {
-		const user = new User({
-			name,
-			email,
-			password,
-			admin,
-		});
-		const token = await user.generateAuthToken();
-		// console.log(token)
-		res.cookie('jwt', token, {
-			httpOnly: true,
-			sameSite: 'Strict',
-			secure: process.env.NODE_ENV !== 'production' ? false : true,
-		});
-		res.status(201).json(user);
-	} catch (e) {
-		res.status(400).json({ error: e.toString() });
-	}
+
+  const { name, email, password, admin } = req.body;
+  try {
+    const user = new Users({
+      name,
+      email,
+      password,
+      admin
+    });
+    const token = await user.generateAuthToken();
+    res.cookie('jwt', token, {
+      httpOnly: true,
+      sameSite: 'Strict',
+      secure: process.env.NODE_ENV !== 'production' ? false : true
+    });
+    res.status(201).json(user);
+  } catch (e) {
+    res.status(400).json({ error: e.toString() });
+  }
+
 };
 
 // ***********************************************//
