@@ -1,27 +1,23 @@
-// import { Router } from 'express';
-//import * as HorseController from '../../controllers/horses';
-// import  as HorseController from '../../controllers/horses';
+const express = require('express');
+const router = express.Router();
 const {
   getAllHorses,
-  getHorseById
+  getHorseById,
+  createOrUpdateHorse,
+  deleteHorse
 } = require('../../controllers/horses');
 
-const horseRouter = require('express').Router();
 
 // get all horses
-horseRouter.get('/horses', getAllHorses)
+router.get('/', getAllHorses)
 
-// // get one horse by cuid
-horseRouter.get('/horses/:id',getHorseById)
-//horseRouter.route('/horses/:id').get(HorseController);
+// get one horse by cuid
+router.get('/horse/:horse-id',getHorseById)
 
-// // add a new horse
-// horseRouter.route('/horses').post(HorseController);
+// add a new horse
+router.post('/', createOrUpdateHorse);
 
-// // update a horse
-// horseRouter.route('/horses/:id').put(HorseController);
+// delete a horse
+router.delete('/', deleteHorse);
 
-// // delete a horse
-// horseRouter.route('/horses/:id').delete(HorseController);
-
-module.exports =  horseRouter;
+module.exports =  router;

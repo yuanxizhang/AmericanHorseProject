@@ -1,5 +1,4 @@
 const dotenv = require('dotenv');
-const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
@@ -18,12 +17,6 @@ mongoose.connect(process.env.MONGODB_URL,{
     .catch(err => console.log(err));
 app.use(cors());
 
-
-// app.get('/', (req, res) => {
-//     res.json({message: 'American Horse Project RESTful API'});
-//   });
-
 app.listen(PORT, function() {
     console.log("Express server is running on Port: " + PORT);
 });
-

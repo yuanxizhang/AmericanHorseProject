@@ -5,10 +5,10 @@ ExtractJwt = require('passport-jwt').ExtractJwt;
 const JWT_SECRET = process.env.JWT_SECRET;
 
 let jwtOptions = {
-    jwtFromRequest: (req) => {
-      console.log(req.body)
+  jwtFromRequest: (req) => {
+      console.log(req.body);
         return req?.cookies?.jwt || 
-        //ExtractJwt.fromAuthHeaderAsBearerToken('jwt')(req);
+        // ExtractJwt.fromAuthHeaderAsBearerToken('jwt')(req);
         ExtractJwt.fromAuthHeaderWithScheme('jwt')(req);
     },
     secretOrKey: JWT_SECRET
@@ -25,6 +25,5 @@ passport.use(
         userData = await User.findById(userData._id);
         return done(null, userData);
     })
-);
-  
+);  
 module.exports = passport;
