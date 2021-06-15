@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import './HorseCard.css'
 
-const HorseCard = () => {
+const HorseCardLarge = () => {
   return (
     <Card className="horse-card horse-card-larger">
         {/* This will render the horse image */}
@@ -25,4 +25,4 @@ const HorseCard = () => {
   );
 };
 
-export default HorseCard;
+export default HorseCardLarge;
