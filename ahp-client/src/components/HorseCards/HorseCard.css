@@ -1,0 +1,27 @@
+.horse-card h1{
+    font-size: 1.25rem;
+    font-weight: 600; 
+
+}
+.horse-card{
+    font-size: 1rem;  
+    height: 62.3vh; 
+    text-align: center;
+}
+.horse-card-small{
+    width: 26.65vw;
+}
+
+.horse-card-large{
+    width: 36.16vw;
+}
+
+.horse-card-small img{
+    height: 43.1vh;
+    width: 26.6vw;
+}
+
+.horse-card-large img{
+    height: 43.1vh;
+    width: 36.1vw;
+}
