@@ -15,11 +15,10 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "client-install": "npm install --prefix ahp-client",
-    "start": "node ahp-server.js",
-    "server": "nodemon ahp-server.js",
-    "client": "npm start --prefix ahp-client",
-    "dev": "concurrently \"npm run ahp-server\" \"npm run ahp-client\""
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
