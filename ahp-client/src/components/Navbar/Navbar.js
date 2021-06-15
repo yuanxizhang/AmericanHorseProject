@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css'
 
-function Navbar () {
+
+const Navbar = () => {
 
   return (
     <section className="navbar">
@@ -11,7 +11,7 @@ function Navbar () {
       <a href="/shop" className="navbar-item">Shop</a>
       <a href="/blog" className="navbar-item">Blog</a>
       <a href="/contact" className="navbar-item">Contact</a>
-  </section>
+    </section>
   )
 
 }

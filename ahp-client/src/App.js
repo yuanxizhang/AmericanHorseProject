@@ -7,23 +7,19 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 // This should house your browserRouter 
-function App() {
+const App=() => {
   
 
   return (
-      
-<div className="App">
-    <Header />
-    <Navbar />
-    <Footer />
-</div>
 
       <BrowserRouter>
 
         <Switch>
+          <Header/>
+          <Navbar />
           <Route exact path="/horsecardsmall" component={HorseCardSmall} />
           <Route exact path="/horsecardlarge" component={HorseCardLarge} />
-
+          <Footer /> 
         </Switch>
 
       </BrowserRouter>

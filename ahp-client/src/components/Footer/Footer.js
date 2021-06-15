@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./App.css";
 
-function Footer() {
+
+const Footer=() =>{
   return (
     <section className="footer">
       <hr className="footer-seperator" />
