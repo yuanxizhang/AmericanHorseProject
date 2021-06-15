@@ -1,50 +1,44 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import jwt_decode from "jwt-decode";
-import setAuthToken from "./utils/setAuthToken";
-import { setCurrentUser, logoutUser } from "./actions/authActions";
-import Navbar from "./components/layout/Navbar";
-import Landing from "./components/layout/Landing";
-import Login from "./components/auth/Login";
-import Register from "./components/auth/Register";
-import PrivateRoute from "./components/private-route/PrivateRoute";
-import Dashboard from "./components/dashboard/Dashboard";
+import ahplogo from "../../ahp-server/americanhorseproject_logo.png";
+import Navbar from "./components/Navbar";
+// import Landing from "./components/layout/Landing";
+// import Login from "./components/auth/Login";
+// import Register from "./components/auth/Register";
+// import PrivateRoute from "./components/private-route/PrivateRoute";
+// import Dashboard from "./components/dashboard/Dashboard";
 import "bootstrap/dist/css/bootstrap.css";
-
-// Check for token to keep user logged in
-if (localStorage.jwtToken) {
-  // Set auth token header auth
-  const token = localStorage.jwtToken;
-  setAuthToken(token);
-
-  // Decode token and get user info and exp
-  const decoded = jwt_decode(token);
-
-  // Set user and isAuthenticated
-  store.dispatch(setCurrentUser(decoded));
-
-  // Check for expired token
-  const currentTime = Date.now() / 1000; // to get in milliseconds
-
-  if (decoded.exp < currentTime) {
-    // Logout user
-    store.dispatch(logoutUser());
-
-    // Redirect to login
-    window.location.href = "./login";
-  }
-}
 
 const App = () => {
   return (
     
       <Router>
-        <div className="App">
-          <Navbar />
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
+        <div className="container">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <Link className="navbar-brand" to="/">
+              <img src={ahplogo} width="30" height="30" alt="americanhorseproject_logo" />
+            </Link>
+            <Link to="/" className="navbar-brand">American Horse Project</Link>
+            <div className="collpase navbar-collapse">
+              <ul className="navbar-nav mr-auto">
+                <li className="navbar-item">
+                  <Link to="/" className="nav-link">Horses</Link>
+                </li>
+                <li className="navbar-item">
+                  <Link to="/showHorse/:id" className="nav-link">Horse</Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        <h1>Adopt a horse</h1>
+          
           <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <Route path='/showHorse/:id' component={showHorse} />
+            <PrivateRoute path='/updateHorse/:id' component={UpdateHorse} />
+            <PrivateRoute path='/AddHorse' component={AddHorse} />      
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </Switch>
         </div>

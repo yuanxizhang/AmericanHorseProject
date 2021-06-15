@@ -17,12 +17,13 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "client-install": "npm install --prefix ahp-client",
-    "start": "npm start",
-    "server": "nodemon ahp-server/server",
-    "client": "npm start --prefix ahp-client",
-    "dev": "concurrently \"npm run server\" \"npm start\""
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000",
+ 
   "eslintConfig": {
     "extends": [
       "react-app",
