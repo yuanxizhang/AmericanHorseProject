@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const Schema = mongoose.Schema;
+
 const horseSchema = new mongoose.Schema({
     name: String,
     breed: String,
@@ -9,11 +11,11 @@ const horseSchema = new mongoose.Schema({
     size: String,
     color: String,
     capabilities: String, 
-    Urgency: String,
+    urgency: String,
     isAdopted: {type: Boolean, default: false, required: true },
-    Organization : { type: Schema.Types.ObjectId, ref: 'Organization' },
+    organization : { type: Schema.Types.ObjectId, ref: 'Organization' },
     adoptionRequests : [{ type: Schema.Types.ObjectId, ref: 'AdoptionRequest' }]
 }, { timestamps: true });
 
 const Horse = mongoose.model('Horse', horseSchema);
-export default Horse;
+module.exports = Horse;
