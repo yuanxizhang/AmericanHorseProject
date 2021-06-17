@@ -1,8 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import ahplogo from "../../ahp-server/americanhorseproject_logo.png";
-import Navbar from "./components/Navbar";
-// import Landing from "./components/layout/Landing";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import ahpLogo from "./americanhorseproject_logo.png";
+// import Navbar from "./components/Navbar";
+import Landing from "./pages/Landing";
 // import Login from "./components/auth/Login";
 // import Register from "./components/auth/Register";
 // import PrivateRoute from "./components/private-route/PrivateRoute";
@@ -16,7 +16,7 @@ const App = () => {
         <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="navbar-brand" to="/">
-              <img src={ahplogo} width="30" height="30" alt="americanhorseproject_logo" />
+              <img src={ahpLogo} width="50" height="30" alt="americanhorseproject_logo" />
             </Link>
             <Link to="/" className="navbar-brand">American Horse Project</Link>
             <div className="collpase navbar-collapse">
@@ -34,12 +34,12 @@ const App = () => {
           
           <Switch>
             <Route exact path="/" component={Landing} />
-            <Route exact path="/register" component={Register} />
+            {/* <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route path='/showHorse/:id' component={showHorse} />
             <PrivateRoute path='/updateHorse/:id' component={UpdateHorse} />
             <PrivateRoute path='/AddHorse' component={AddHorse} />      
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
           </Switch>
         </div>
       </Router>
