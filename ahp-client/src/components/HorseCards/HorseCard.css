@@ -1,0 +1,40 @@
+.horse-name{
+    font-size: 1.25rem;
+    font-weight: 600; 
+    text-align: center;
+
+}
+.horse-card{
+    font-size: 1rem;  
+    height: 62.3vh; 
+    text-align: center;
+    border: 1px solid black;
+}
+
+.horse-card-info-container{
+    display: flex;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom:0;
+}
+.horse-card-info{
+    border: 1px solid black;
+}
+.horse-card-small{
+    width: 26.65vw;
+}
+
+.horse-card-large{
+    width: 36.16vw;
+}
+
+.horse-card-small img{
+    height: 43.1vh;
+    width: 26.6vw;
+}
+
+.horse-card-large img{
+    height: 43.1vh;
+    width: 36.1vw;
+}

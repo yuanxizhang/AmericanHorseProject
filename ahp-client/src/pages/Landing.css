@@ -13,13 +13,13 @@
   top: 0;
   left: 0;
   padding: none;
-  position: fixed; 
+  position: relative; 
 }
 
 .viewport-header {
   position: relative;
   height: 100%;
-  text-align: center;
+  text-align: left;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +29,7 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   color: white;
   text-transform: uppercase;
-  letter-spacing: 2vw;
+  letter-spacing: 1vw;
   line-height: 1.2;
   font-size: 3vw;
   text-align: center;

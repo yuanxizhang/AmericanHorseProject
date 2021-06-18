@@ -7,12 +7,13 @@ const Landing = () => {
     
     return (
         <div>
+            
             <video id="background-video" loop autoPlay muted>
                 <source src={ahp_hero} type="video/mp4" />
             </video>
             <header class="viewport-header">
                 <h1>
-                    Adopt a horse today
+                    Save a horse today.
                 </h1>
             </header>
         

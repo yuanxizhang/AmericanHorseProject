@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import dotenv from 'dotenv';
 import express from 'express';
@@ -9,6 +10,11 @@ import app from './app';
 // const express = require('express');
 // const mongoose = require('mongoose');
 // const cors = require('cors');
+=======
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+const cors = require('cors');
+>>>>>>> 7c6519c0b6b0701618549a01a7c7f6fa014b6ded
 
 dotenv.config();
 
@@ -24,6 +30,7 @@ mongoose.connect(process.env.MONGODB_URL,{
     .catch(err => console.log(err));
 app.use(cors());
 
+<<<<<<< HEAD
 app.get('/ping', (req, res) => {
     res.json({message: 'American Horse Project RESTful API'});
 });
@@ -39,7 +46,8 @@ app.get('/*', function(req,res) {
  */
 
 
+=======
+>>>>>>> 7c6519c0b6b0701618549a01a7c7f6fa014b6ded
 app.listen(PORT, function() {
     console.log("Express server is running on Port: " + PORT);
 });
-
