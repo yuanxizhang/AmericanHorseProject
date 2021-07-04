@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema (
             trim: true
         },
         ein: { 
-            type: Integer,
+            type: String,
             trim: true,
             validate(value){
                 if (!validator.isValid(value)){
@@ -85,7 +85,7 @@ const userSchema = new mongoose.Schema (
             trim: true
         },
         zip: { 
-            type: Integer,
+            type: String,
             validate(value) {
                 if(value.length !== 5) {
                     throw new Error('invalid U.S. zip code')

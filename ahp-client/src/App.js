@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import ahpLogo from "./americanhorseproject_logo.png";
+import ahp_logo from "./americanhorseproject_logo.png";
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -19,7 +19,7 @@ const App = () => {
         {/* <div className="nav-container">
         <nav className="navbar navbar-expand navbar-light bg-light">
             <Link className="navbar-brand" to="/">
-              <img src={ahpLogo} width="60" height="40" alt="americanhorseproject_logo" />
+              <img src={ahp_logo} width="60" height="40" alt="americanhorseproject_logo" />
             </Link>
             <Link to="/" className="navbar-brand">American Horse Project</Link>
             <div className="collpase navbar-collapse">

@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-const Organization = mongoose.model('Organization', organizationSchema);
-export default Organization;
 
 const OrganizationSchema = new mongoose.Schema(
 	{

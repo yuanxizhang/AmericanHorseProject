@@ -1,39 +1,40 @@
 import React from "react";
-
-
+import ahp_logo from "../../americanhorseproject_logo.png";
 
 const Footer=() =>{
   return (
     <section className="footer">
       <hr className="footer-seperator" />
       <section className="footer-social-media">
-        
+          
       </section>
       <section className="footer-info">
         <section className="footer-info-left">
           <section className="footer-info__name">
-            
+            <img src={ahp_logo} width="60" height="40" alt="americanhorseproject_logo" />  
           </section>
           <section className="footer-info__returns">
             Privacy Policy
             <br />
-            Terms and Conditions
+            
           </section>
         </section>
         <section className="footer-info-center">
-          <section className="footer-info__email">shop.info@gmail.com</section>
+          <section className="footer-info__email">americanhorseproject@gmail.com</section>
           <section className="footer-info__terms">
             Terms and Conditions
             <br />
-            Copyright
+            Copyright @<span style={{ paddingLeft: 5 }}>
+                        {new Date().getFullYear()} American Horse Project. All rights reserved.
+                    </span>
           </section>
         </section>
         <section className="footer-info-right">
-          <section className="footer-info__number">99999999999</section>
+          <section className="footer-info__number"></section>
           <section className="footer-info__contact">
-            Our Story
+            Contact
             <br />
-            Contact Us
+            
           </section>
         </section>
       </section>
