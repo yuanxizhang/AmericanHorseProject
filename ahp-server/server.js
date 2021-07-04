@@ -13,7 +13,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 // import shelterRoutes from './routes/shelterRoutes.js'
 // import userRoutes from './routes/userRoutes.js'
 // import requestRoutes from './routes/requestRoutes.js'
-// import uploadRoutes from './routes/uploadRoutes.js'
+import uploadRoutes from './routes/uploadRoutes.js'
 
 dotenv.config();
 
@@ -34,7 +34,7 @@ mongoose.connect(process.env.DB,
   // app.use('/api/shelters', shelterRoutes)
   // app.use('/api/users', userRoutes)
   // app.use('/api/orders', orderRoutes)
-  // app.use('/api/upload', uploadRoutes)
+  app.use('/api/upload', uploadRoutes)
   
   const __dirname = path.resolve()
   
